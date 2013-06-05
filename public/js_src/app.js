@@ -1,6 +1,6 @@
-(['router'], function(router) {
+define('Application', ['router'], function(router) {
     var initialize = function() {
-        log('check login');
+        log('do -> checkLogin()');
         //checkLogin(runApp);
     };
 

@@ -39,11 +39,13 @@ curl(cfg, ['js!jQuery'], function(){
     log('LoDash, Backbone & bootstrap loaded!');
 }).next(['link!cssPath/maxmertkit', 'link!cssPath/maxmertkit-components', 'link!cssPath/maxmertkit-animation', 'js!Maxmert', 'js!MaxmertNotify'], function(){
     log('maxmertkit loaded!');
-}).next(['js!jQueryUI', 'js!Handlebars','js!Mousetrap','Application'], function(js, js, Application){
+}).next(['js!jQueryUI', 'js!Handlebars', 'js!Mousetrap'], function(){
     log('jQueryUI, Handlebars, Mousetrap & Application loaded!');
-    //Application.initialize();
 }).then(function(){
     log('All required files loaded!');
+    curl(['Application'], function(app){
+        app.initialize();
+    });
 }, function(ex){
-
+    console.error(ex);
 });

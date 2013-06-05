@@ -27,6 +27,7 @@
 
         <%- assets.js() %>
         <!-- script data-main="js_src/main" src="js_src/libs/require.js"></script -->
-        <script src="js_src/main2.js"></script>
+        <script>window.curl || document.write('<script src="js_src/libs/curl.js"><\/script>')</script>
+        <script src="js_src/main2.js?v=7"></script>
     </body>
 </html>
