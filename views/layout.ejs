@@ -11,7 +11,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
         <%- assets.css() %>
         <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
-        <script>window.Modernizr || document.write('<script src="js/libs/modernizr-2.6.2.min.js"><\/script>')</script>
+        <script>window.Modernizr || document.write('<script src="js_src/libs/modernizr.js"><\/script>')</script>
     </head>
     <body>
         <!--[if lt IE 7]>
@@ -26,6 +26,7 @@
         <%- assets.templateLibrary() %>
 
         <%- assets.js() %>
-        <script data-main="js/main" src="js/libs/require.js"></script>
-	</body>
+        <!-- script data-main="js_src/main" src="js_src/libs/require.js"></script -->
+        <script src="js_src/main2.js"></script>
+    </body>
 </html>
