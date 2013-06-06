@@ -1,7 +1,8 @@
 var app = {
     config: {
         env: 'development',
-        lesscss: '.less'
+        lesscss: '.less',
+        lessWatch: false
     },
     amdCfg: {
         baseUrl: '/js_src',
@@ -46,7 +47,11 @@ function compile_less () {
             less.sheets.push($(this)[0]);
         }
     });
-    //less.refresh();
+
+    if (!app.config.lessWatch) {
+        less.refresh();
+    }
+
     log('LESS has just compiled '+less.sheets.length+' file(s) into css');
 } // compile_less
 
@@ -69,7 +74,7 @@ function lcss (filename) {
         $.getJSON('/test/info', function(data) {
             app.config.env = data.env;
 
-            if (data.env == 'development') {
+            if (data.env == 'development' && app.config.lessWatch) {
                 less.watch();
             }
         });
