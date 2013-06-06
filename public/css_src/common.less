@@ -1,0 +1,251 @@
+// COMMON STYLES //
+@import 'lib';
+
+
+/* General Purpose */
+.abs {
+    position: absolute;
+}
+.rel {
+    position: relative;
+}
+.fixed {
+    position: fixed;
+}
+.center {
+    text-align: center;
+}
+.right {
+    text-align: right;
+}
+.left {
+    text-align: left;
+}
+.divcenter {
+    margin-left: auto;
+    margin-right: auto;
+}
+.no-margin {
+    margin: 0;
+}
+.border (@type, @color:#CC9900, @size:1px) {
+    border: @size @type @color;
+}
+.no-border {
+    border: none;
+}
+.full-res {
+    .full-resolution();
+}
+
+.clear {
+    clear: both;
+}
+.fLeft {
+    float: left;
+}
+.fRight {
+    float: right;
+}
+.fCenter {
+    .box();
+}
+
+.block {
+    display: block;
+}
+.hide {
+    display: none;
+}
+.inline {
+    display: inline;
+}
+.invisible {
+    visibility: hidden;
+}
+.overhide {
+    overflow: hidden;
+}
+.link {
+    cursor: pointer;
+}
+.userselect {
+    .user-select;
+}
+
+.textWhiteShadow {
+    text-shadow: 1px 1px 0px #ffffff;
+    filter: dropshadow(color=#ffffff, offx=1, offy=1);
+}
+
+.radius2 {
+    .radius(2px);
+}
+.radius5 {
+    .radius(5px);
+}
+.radius10 {
+    .radius(10px);
+}
+.radius20 {
+    .radius(20px);
+}
+
+
+/* Fonts & Colors */
+.bold {
+    font-weight: bold;
+}
+.italic {
+    font-style: italic;
+}
+.normal {
+    font-style: normal;
+}
+.large {
+    font-size: 16px;
+}
+.small {
+    font-size: 11px;
+}
+.font-color (@color:@base-color) {
+    color: @color;
+}
+.black {
+    color: black;
+}
+.blue {
+    color: blue;
+}
+.green {
+    color: green;
+}
+.red {
+    color: red;
+}
+.gray {
+    color: gray;
+}
+.white {
+    color: white;
+}
+.redFont {
+    color: #9d0d0d;
+}
+.greenFont {
+    color: #037c0b;
+}
+.grayFont {
+    color: #CCC;
+}
+.lightgrayFont {
+    color: #666;
+}
+.darkgray {
+    color: #333;
+}
+
+.no-decoration {
+    text-decoration: none;
+}
+.underline {
+    text-decoration: underline;
+}
+.lower {
+    text-transform: lowercase;
+}
+.upper {
+    text-transform: uppercase;
+}
+.loading {
+    color: gray;
+    font-style: italic;
+}
+
+
+/** Basic Style On Page **/
+body {
+    font-family: @site-font;
+    font-size: @base-fontsize;
+    color: #144669;
+    .no-margin;
+}
+a {
+    color: @base-color;
+    .no-decoration;
+    &:hover {
+        .font-color;
+        .underline;
+    }
+    img { .no-border; }
+}
+form {
+    .no-margin;
+}
+div#cube {
+    .transform (~"translateZ(-2000px)");
+}
+
+
+/* Form Elements */
+.input-bg (@orientation:top, @start:#FFFED7, @end:#FFF) {
+    background: -webkit-linear-gradient(@orientation, @start, @end);
+    background: -moz-linear-gradient(@orientation, @start, @end);
+}
+.input-hover {
+}
+.input-focus {
+    border-color: #17355d;
+}
+.input (@width:120px) {
+    padding: 4px 0 4px 5px;
+    .no-margin;
+    width: @width;
+    .input-bg;
+    &:hover { .input-hover; }
+    &:focus { .input-focus; }
+}
+/*input, button, textarea, select {
+    color: @base-color;
+    font-family: @site-font;
+    font-size: @base-fontsize;
+}
+input {
+    &[type=text], &[type=password], &[type=email], &[type=date], &[type=search], &[type=tel], &[type=number], &[type=submit], &[type=reset], &[type=button] {
+        .border(solid);
+        .radius(3px);
+    }
+}
+button, textarea, select, div.textbox {
+    .border(solid);
+    .radius(3px);
+}
+input {
+    &[type=text], &[type=password], &[type=email], &[type=date], &[type=search], &[type=tel], &[type=number] {
+        .input;
+    }
+}
+textarea, div.textbox {
+    .input;
+}
+input[disabled], input[disabled]:hover {
+    border-color: #ABADB3;
+    color: #808080;
+    background-color: #E1E1E1;
+}
+select {
+    height: 21px;
+    &:hover { .input-hover; }
+    &:focus { .input-focus; }
+}*/
+
+/* ERROR INPUT */
+div.invalidField {
+    color: #d4666f;
+    background: #fff0f0 url("@{base-img-url}cross.png") 6px 4px no-repeat;
+    border-bottom: 1px solid #e7e4e4;
+    padding: 6px 8px 6px 30px;
+}
+label.invalid {
+    color: #970000;
+}

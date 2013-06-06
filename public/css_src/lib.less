@@ -1,0 +1,115 @@
+@site-font: "Lucida Grande",Verdana,Arial,"Bitstream Vera Sans",sans-serif;
+@base-color: #797979;
+@base-fontsize: 11px;
+@base-img-url: '../img';
+
+.border (@top, @right, @bottom, @left, @width:1px, @style:solid) {
+    border: @width @style @top;
+    border-right-color: @right;
+    border-bottom-color: @bottom;
+    border-left-color: @left;
+}
+.linear-gradient (@bgcolor, @x) {
+    background-color: @bgcolor;
+    background: -moz-linear-gradient(@x);
+    background: -webkit-linear-gradient(@x);
+    background: -o-linear-gradient(@x);
+    background: -ms-linear-gradient(@x);
+    background: linear-gradient(@x);
+}
+.radius (@radius) {
+    border-radius: @radius;
+    -moz-border-radius: @radius;
+    -webkit-border-radius: @radius;
+}
+.box (@pack:center, @align:center) {
+    display: -moz-box;
+    -moz-box-pack: @pack;
+    -moz-box-align: @align;
+    display: -webkit-box;
+    -webkit-box-pack: @pack;
+    -webkit-box-align: @align;
+    display: -o-box;
+    -o-box-pack: @pack;
+    -o-box-align: @align;
+    display: -ms-box;
+    -ms-box-pack: @pack;
+    -ms-box-align: @align;
+    /*display: box;
+    box-pack: @pack;
+    box-align: @align;*/
+}
+.box-shadow (@x) {
+    -webkit-box-shadow: @x;
+    -moz-box-shadow: @x;
+    box-shadow: @x;
+}
+.user-select (@x:none) {
+    -webkit-touch-callout: @x;
+    -webkit-user-select: @x;
+    -moz-user-select: @x;
+    -o-user_select: @x;
+    -ms-user-select: @x;
+    user-select: @x;
+}
+.full-resolution (@x:absolute) {
+    width: 100%;
+    height: 100%;
+    position: @x;
+}
+
+/* 3D & Animation */
+.animation (@x) {
+    -webkit-animation: @x;
+    -moz-animation: @x;
+    -o-animation: @x;
+    animation: @x;
+}
+.perspective2 (@perspective:500) {
+    -webkit-perspective: @perspective;
+    -moz-perspective: @perspective;
+    -o-perspective: @perspective;
+    perspective: @perspective;
+}
+.perspective (@perspective:500, @origin:~"50% 50%") {
+    -webkit-perspective: @perspective;
+    -moz-perspective: @perspective;
+    -o-perspective: @perspective;
+    perspective: @perspective;
+    -webkit-perspective-origin: @origin;
+    -moz-perspective-origin: @origin;
+    perspective-origin: @origin;
+}
+.transform2 (@transform) {
+    -webkit-transform: @transform;
+    -moz-transform: @transform;
+    -ms-transform: @transform;
+    -o-transform: @transform;
+    transform: @transform;
+}
+.transform (@transform, @style:preserve-3d) {
+    -webkit-transform: @transform;
+    -moz-transform: @transform;
+    -ms-transform: @transform;
+    -o-transform: @transform;
+    transform: @transform;
+    -webkit-transform-style: @style;
+    -moz-transform-style: @style;
+    -ms-transform-style: @style;
+    -o-transform-style: @style;
+    transform-style: @style;
+}
+.transition (@x, @transform:false) when (@transform = false) {
+    -webkit-transition: @x;
+    -moz-transition: @x;
+    -ms-transition: @x;
+    -o-transition: @x;
+    transition: @x;
+}
+.transition (@x, @transform:false) when (@transform = true) {
+    -webkit-transition: -webkit-transform @x;
+    -moz-transition: -moz-transform @x;
+    -ms-transition: -ms-transform @x;
+    -o-transition: -o-transform @x;
+    transition: transform @x;
+}
